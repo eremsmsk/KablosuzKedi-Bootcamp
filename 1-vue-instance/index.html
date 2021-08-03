@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
         <h1>{{ title }}</h1>
         <p>{{ content }}</p>
         <a :target="eduflow.target" :href="eduflow.url" :alt="eduflow.alt"> {{ eduflow.title }}</a>
+        <br><br>
+        <button v-on:click="changeTitle('1. Button')">Title Değiştir.</button>
+        <button v-on:click="changeTitle('2. Button')">Title Değiştir.</button>
+        <div @mousemove="updateCoords" class="box" @click="changeTitle('Box Üzerinden Gelen..')"></div>
+        <span>{{ coords.x }}, {{ coords.y }}</span>
     </div>
 
     <script src="app.js"></script>

@@ -10,6 +10,21 @@ const app = Vue.createApp({
                 alt: "mufredat-kablosuzkedi-vue-bootcamp",
             
             },
+            coords: {
+                x: 0,
+                y: 0,
+            }
         }
+    },
+    methods: {
+         changeTitle(title){
+            this.title = title;
+         },
+         updateCoords(event){
+            this.coords = {
+                x: event.x,
+                y: event.y,
+            }
+         }
     }
 }).mount('#app')
